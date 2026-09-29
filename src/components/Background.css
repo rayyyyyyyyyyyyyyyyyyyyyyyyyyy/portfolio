@@ -1,0 +1,23 @@
+/* ============================================
+   Frutiger Aero Background & Cloud Animations
+   ============================================ */
+
+.frutiger-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: url('../assets/blue-sky-white-clouds.webp') center/cover no-repeat;
+}
+
+/* แสงอาทิตย์ / Sunburst Glow */
+.sun-glow {
+  position: absolute;
+  top: -60px;
+  left: 20%;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 230, 150, 0.4) 45%, transparent 70%);
+  filter: blur(20px);
+}

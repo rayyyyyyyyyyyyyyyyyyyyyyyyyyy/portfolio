@@ -1,0 +1,200 @@
+/* ============================================
+   Experience Section — Scrapbook Logbook Style
+   ============================================ */
+
+.experience {
+  position: relative;
+  z-index: 10;
+}
+
+.experience__container {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.exp-card {
+  padding: 36px;
+  background: #ffffff;
+  border-radius: var(--radius-scrapbook);
+  box-shadow: var(--shadow-scrapbook);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.exp-card__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 36px;
+  align-items: center;
+}
+
+/* Polaroid Collage Media */
+.exp-card__media {
+  display: flex;
+  justify-content: center;
+}
+
+.exp-card__polaroid {
+  background: #ffffff;
+  padding: 12px 12px 18px 12px;
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+  border: 1px solid #e2e8f0;
+  transform: rotate(-2deg);
+  transition: transform 0.3s ease;
+  max-width: 380px;
+  width: 100%;
+}
+
+.exp-card__polaroid:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.exp-card__img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
+
+.exp-card__caption {
+  font-family: var(--font-pixel);
+  font-size: 1.15rem;
+  color: #475569;
+  text-align: center;
+  margin-top: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* Content Area */
+.exp-card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.exp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  background: #ffe4e6;
+  color: #e11d48;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin-bottom: 8px;
+  border: 1px solid #fecdd3;
+  width: fit-content;
+}
+
+.exp-card__role {
+  font-family: var(--font-heading);
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+
+.exp-card__org {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0284c7;
+  margin-bottom: 12px;
+}
+
+.exp-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed #cbd5e1;
+}
+
+.meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #475569;
+}
+
+.exp-card__desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #334155;
+  margin-bottom: 20px;
+}
+
+/* Achievements */
+.exp-card__achievements {
+  background: #fff1f2;
+  border: 1px solid #ffe4e6;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.achievements-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #be123c;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.exp-card__achievements ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-card__achievements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.92rem;
+  color: #1e293b;
+  line-height: 1.5;
+}
+
+.check-icon {
+  color: #e11d48;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Skills */
+.exp-card__skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .exp-card__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exp-card__polaroid {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .exp-card {
+    padding: 24px 18px;
+  }
+
+  .exp-card__role {
+    font-size: 1.7rem;
+  }
+}

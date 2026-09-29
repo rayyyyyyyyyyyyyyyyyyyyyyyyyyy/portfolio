@@ -1,0 +1,57 @@
+/* === Y2K Sparkle Overlay === */
+.sparkle-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ดาวกะพริบ — 4-pointed star via clip-path */
+.sparkle {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: radial-gradient(circle, #ffffff 0%, var(--color-bling-gold) 50%, transparent 70%);
+  clip-path: polygon(
+    50% 0%, 60% 35%, 100% 50%, 60% 65%,
+    50% 100%, 40% 65%, 0% 50%, 40% 35%
+  );
+  animation: twinkle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+  opacity: 0;
+}
+
+.sparkle--sm { width: 10px; height: 10px; }
+.sparkle--md { width: 18px; height: 18px; }
+.sparkle--lg { width: 26px; height: 26px; }
+
+/* สี variants */
+.sparkle--gold { background: radial-gradient(circle, #fff 0%, #ffd700 60%, transparent 70%); }
+.sparkle--pink { background: radial-gradient(circle, #fff 0%, #ff69b4 60%, transparent 70%); }
+.sparkle--white { background: radial-gradient(circle, #fff 0%, #e0e7ff 60%, transparent 70%); }
+
+/* Lens flare — วงกลมแสงวิบวับ */
+.lens-flare {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 215, 0, 0.3) 30%, transparent 60%);
+  animation: twinkle var(--duration) ease-in-out infinite;
+  animation-delay: var(--delay);
+  opacity: 0;
+  filter: blur(2px);
+}
+
+/* Decorative star shape — 6-pointed */
+.deco-star {
+  position: absolute;
+  color: var(--color-bling-gold);
+  font-size: var(--size, 24px);
+  animation: float-gentle 4s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  opacity: 0.7;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+  pointer-events: none;
+}

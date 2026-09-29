@@ -21,3 +21,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# unused source images (not referenced by the app)
+/img
+
+# vercel
+.vercel
+
+# claude code personal settings
+.claude/settings.local.json
+
+# dev tooling, not part of the portfolio source
+.claude/
+skills-lock.json

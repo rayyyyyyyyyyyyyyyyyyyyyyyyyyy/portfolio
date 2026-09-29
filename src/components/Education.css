@@ -1,0 +1,151 @@
+/* ============================================
+   Education Section — Scrapbook Style
+   ============================================ */
+
+.education {
+  position: relative;
+  z-index: 10;
+}
+
+.education__container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.edu-card {
+  padding: 36px;
+  background: #ffffff;
+  border-radius: var(--radius-scrapbook);
+  box-shadow: var(--shadow-scrapbook);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  position: relative;
+}
+
+.edu-card__header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #cbd5e1;
+}
+
+.edu-card__icon-wrapper {
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  background: #f5f3ff;
+  border: 2px solid #ddd6fe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+}
+
+.edu-icon {
+  color: #7c3aed;
+}
+
+.edu-card__title-group {
+  flex: 1;
+}
+
+.edu-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #7c3aed;
+  background: #ede9fe;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  margin-bottom: 6px;
+}
+
+.edu-card__degree {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.edu-card__major {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0284c7;
+  margin-bottom: 2px;
+}
+
+.edu-card__inst {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 10px;
+}
+
+.edu-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Body Blocks */
+.edu-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.edu-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.block-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.edu-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.edu-highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+  .edu-card {
+    padding: 24px 18px;
+  }
+
+  .edu-card__header {
+    flex-direction: column;
+  }
+
+  .edu-card__degree {
+    font-size: 1.5rem;
+  }
+}

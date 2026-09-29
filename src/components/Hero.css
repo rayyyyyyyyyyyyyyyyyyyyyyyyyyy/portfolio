@@ -1,0 +1,223 @@
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.hero__content {
+  text-align: center;
+  position: relative;
+  z-index: 5;
+  max-width: 820px;
+}
+
+/* Badge — Rhinestone / Crystal Border ✨ */
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--color-bling-gold);
+  border-radius: 9999px;
+  box-shadow:
+    0 0 12px rgba(255, 215, 0, 0.3),
+    0 6px 16px rgba(0, 0, 0, 0.12),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+  margin-bottom: 24px;
+}
+
+.hero__badge-text {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-bling-pink);
+  letter-spacing: 1px;
+}
+
+/* Hero Title — Better readability on sky BG */
+.hero__title {
+  font-size: 4.2rem;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 4px 12px rgba(0, 0, 0, 0.25),
+    0 0 30px rgba(255, 215, 0, 0.15);
+}
+
+.hero__subtitle {
+  font-size: 1.15rem;
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 16px 24px;
+  border-radius: 18px;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 650px;
+  margin: 0 auto 32px;
+}
+
+/* ปุ่ม Glossy + Glint Animation สไตล์ Y2K */
+.hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.hero__btn {
+  padding: 14px 30px;
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__btn--primary {
+  background: linear-gradient(180deg, #ff69b4 0%, #ff2d9b 50%, #d4006a 100%);
+  color: #ffffff;
+  border: 1px solid #ff69b4;
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.6),
+    0 6px 20px rgba(255, 45, 155, 0.4);
+}
+
+/* Glint sweep effect */
+.hero__btn--primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: skewX(-20deg);
+  animation: glint 3s ease-in-out infinite;
+}
+
+.hero__btn--primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    inset 0 1px 3px rgba(255, 255, 255, 0.8),
+    0 10px 28px rgba(255, 45, 155, 0.5),
+    0 0 15px rgba(255, 215, 0, 0.3);
+}
+
+.hero__btn--secondary {
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--color-bling-pink);
+  border: 2px solid var(--color-bling-gold);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+.hero__btn--secondary:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+/* Floating Y2K Tags — Hot Colors */
+.hero__tag {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  font-weight: 800;
+  box-shadow:
+    var(--shadow-scrapbook),
+    0 0 8px rgba(255, 215, 0, 0.2);
+  animation: float-tag 5s ease-in-out infinite;
+}
+
+.hero__tag--1 {
+  top: 15%;
+  left: 6%;
+  background: #fff0f6;
+  border: 2px solid var(--color-bling-hotpink);
+  color: var(--color-bling-pink);
+  transform: rotate(-4deg);
+}
+
+.hero__tag--2 {
+  top: 22%;
+  right: 6%;
+  background: #fffbeb;
+  border: 2px solid var(--color-bling-gold);
+  color: #b45309;
+  transform: rotate(5deg);
+  animation-delay: 1.5s;
+}
+
+.hero__tag--3 {
+  bottom: 12%;
+  left: 8%;
+  background: #fdf4ff;
+  border: 2px solid var(--color-bling-magenta);
+  color: #a21caf;
+  transform: rotate(3deg);
+  animation-delay: 2.8s;
+}
+
+/* Decorative Star Graphics — Y2K core element */
+.hero__star {
+  position: absolute;
+  font-size: 36px;
+  color: var(--color-bling-gold);
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+  animation: float-gentle 4s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.hero__star--1 {
+  top: 10%;
+  left: 35%;
+  font-size: 28px;
+  animation-delay: 0.5s;
+}
+
+.hero__star--2 {
+  top: 30%;
+  right: 12%;
+  font-size: 40px;
+  color: var(--color-bling-hotpink);
+  text-shadow: 0 0 15px rgba(255, 105, 180, 0.5);
+  animation-delay: 1.8s;
+}
+
+.hero__star--3 {
+  bottom: 20%;
+  right: 15%;
+  font-size: 24px;
+  animation-delay: 3s;
+}
+
+@keyframes float-tag {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@media (max-width: 768px) {
+  .hero__title { font-size: 2.6rem; }
+  .hero__tag { display: none; }
+  .hero__star { display: none; }
+  .hero__actions { flex-direction: column; }
+}

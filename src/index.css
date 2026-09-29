@@ -1,13 +1,197 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Charmonman:wght@400;700&family=Dancing+Script:wght@700&family=Grand+Hotel&family=Nunito:wght@400;600;700;800&family=Outfit:wght@400;600;800;900&family=Pacifico&family=Srisakdi:wght@400;700&family=VT323&display=swap');
+@import url('https://fonts.cdnfonts.com/css/nickainley');
+@import url('https://fonts.cdnfonts.com/css/lavanderia');
+
+@font-face {
+  font-family: 'Nickainley';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Nickainley'), url('https://fonts.cdnfonts.com/s/18522/Nickainley-Normal.woff') format('woff');
+  font-display: swap;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: 'Lavanderia';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Lavanderia'), url('https://fonts.cdnfonts.com/s/18520/Lavanderia Delicate.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lavanderia';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Lavanderia'), url('https://fonts.cdnfonts.com/s/18520/Lavanderia Regular.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Lavanderia';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Lavanderia'), url('https://fonts.cdnfonts.com/s/18520/Lavanderia Sturdy.woff') format('woff');
+  font-display: swap;
+}
+
+:root {
+  --color-primary: #0284c7;
+  --color-primary-dark: #0369a1;
+  --color-accent-pink: #f43f5e;
+  --color-accent-yellow: #f59e0b;
+  --color-accent-green: #10b981;
+  --color-accent-blue: #3b82f6;
+  --color-accent-lavender: #8b5cf6;
+
+  /* Y2K Bling Palette */
+  --color-bling-pink: #ff2d9b;
+  --color-bling-gold: #fffe7e;
+  --color-bling-magenta: #ff00ff;
+  --color-bling-hotpink: #ff69b4;
+  --color-bling-silver: #c0c0c0;
+
+  --color-text-dark: #0f172a;
+  --color-text-medium: #334155;
+  
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+  --font-pixel: 'VT323', monospace;
+  --font-grand-hotel: 'Grand Hotel', cursive;
+  --font-lavanderia: 'Lavanderia', 'Lavanderia-Sturdy', cursive;
+  --font-nickainley: 'Nickainley', cursive;
+  --font-srisakdi: 'Srisakdi', cursive;
+  --font-charmonman: 'Charmonman', cursive;
+  --font-cursive: 'Grand Hotel', 'Lavanderia', 'Nickainley', cursive;
+
+  --radius-scrapbook: 14px;
+  --shadow-scrapbook: 0 12px 28px rgba(15, 23, 42, 0.14), 0 2px 6px rgba(15, 23, 42, 0.08);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background: #1b73e8;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === Layout Wrappers === */
+.section {
+  padding: 70px 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* === Section Titles === */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 48px;
+  color: #fffe7e;
+  letter-spacing: 0.5px;
+  text-shadow:
+    0 2px 10px rgba(0, 0, 0, 0.35),
+    0 4px 18px rgba(0, 0, 0, 0.2);
+}
+
+.section-title .accent {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: initial;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  filter: none;
+}
+
+/* === Digital Scrapbook Card Base === */
+.card {
+  background: #ffffff;
+  border-radius: var(--radius-scrapbook);
+  box-shadow: var(--shadow-scrapbook);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.18);
+}
+
+/* กิมมิกเทปวาชิติดหัวการ์ด */
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+  width: 110px;
+  height: 24px;
+  backdrop-filter: blur(4px);
+  border: 1px dashed rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+/* Washi tape color variants */
+.washi-tape--pink    { background: rgba(244, 114, 182, 0.75); }
+.washi-tape--blue    { background: rgba(96, 165, 250, 0.75); }
+.washi-tape--yellow  { background: rgba(250, 204, 21, 0.75); }
+.washi-tape--green   { background: rgba(74, 222, 128, 0.75); }
+.washi-tape--lavender { background: rgba(196, 181, 253, 0.75); }
+
+/* Tag สไตล์สติกเกอร์ Y2K */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.06);
+  border: 1.5px solid transparent;
+  transition: transform 0.2s ease;
+}
+
+.tag:hover {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.tag--blue   { background: #e0f2fe; color: #0369a1; border-color: #7dd3fc; }
+.tag--pink   { background: #ffe4e6; color: #be123c; border-color: #f43f5e; }
+.tag--yellow { background: #fef3c7; color: #b45309; border-color: #fcd34d; }
+.tag--green  { background: #dcfce7; color: #15803d; border-color: #86efac; }
+.tag--violet { background: #f3e8ff; color: #6b21a8; border-color: #d8b4fe; }
+
+/* === Y2K Bling Keyframes === */
+@keyframes twinkle {
+  0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+@keyframes glint {
+  0%, 100% { opacity: 0; transform: translateX(-100%) rotate(30deg); }
+  50% { opacity: 0.6; }
+  100% { opacity: 0; transform: translateX(200%) rotate(30deg); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
