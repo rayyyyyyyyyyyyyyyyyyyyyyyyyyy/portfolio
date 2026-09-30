@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Sparkles, FolderGit2, Plane, GraduationCap, Mail } from 'lucide-react';
+import { Sparkles, FolderGit2, Plane, Mail } from 'lucide-react';
 import './Taskbar.css';
 
 const GithubIcon = ({ size = 18 }) => (
@@ -13,7 +13,6 @@ const ITEMS = [
   { id: 'skills', label: 'Skills', Icon: Sparkles },
   { id: 'projects', label: 'Projects', Icon: FolderGit2 },
   { id: 'experience', label: 'Experience', Icon: Plane },
-  { id: 'education', label: 'Education', Icon: GraduationCap },
   { id: 'contact', label: 'Contact', Icon: Mail },
 ];
 

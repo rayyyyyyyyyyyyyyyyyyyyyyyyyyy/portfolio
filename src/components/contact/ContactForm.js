@@ -84,13 +84,13 @@ function ContactForm({ onSent }) {
       </div>
 
       <div className="compose__footer">
-        <button type="submit" className="btn compose__send" disabled={sending}>
-          <Send size={17} aria-hidden="true" /> {sending ? 'Sending...' : 'Send'}
-        </button>
         <p className="compose__status" role="status" aria-live="polite">
           {status === 'sent' && 'Message sent! I will reply to your email soon.'}
           {formError && <span className="compose__error">{formError}</span>}
         </p>
+        <button type="submit" className="btn compose__send" disabled={sending}>
+          <Send size={17} aria-hidden="true" /> {sending ? 'Sending...' : 'Send'}
+        </button>
       </div>
     </form>
   );

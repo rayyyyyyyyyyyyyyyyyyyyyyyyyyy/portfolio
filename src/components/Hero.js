@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react';
-import { Disc, Paperclip, Sticker, Tape } from './ui/Decor';
+import { Paperclip, Sticker, Tape } from './ui/Decor';
 import portrait from '../assets/onuma-portrait.webp';
 import './Hero.css';
 
@@ -58,16 +58,31 @@ function Hero() {
 
           <div className="hero__note" aria-hidden="true">
             <Tape color="blue" style={{ top: -12, left: 40, transform: 'rotate(-4deg)' }} />
-            <p>looking for: full-stack roles</p>
+            <p>looking for: <span className="hero__nowrap">full-stack</span> roles</p>
             <p>based in: Bangkok, Thailand</p>
             <p>say hi! email or GitHub</p>
           </div>
 
-          <Disc className="hero__disc" label="full-stack mix" sub="vol. 1 · 2026" />
+          {/* Education, as a student ID laid on the collage (the polaroid already carries the photo) */}
+          <article className="hero__idcard" id="education" aria-labelledby="hero-edu-title">
+            <div className="hero__idcard-band">
+              <span id="hero-edu-title">KMUTNB</span>
+              <span className="hero__idcard-band-sub">Student</span>
+            </div>
+            <div className="hero__idcard-body">
+              <p className="hero__idcard-major">B.Eng. Electronics Engineering Technology (Computer)</p>
+              <p className="hero__idcard-inst">College of Industrial Technology</p>
+              <dl className="hero__idcard-facts">
+                <div><dt>Expected graduation</dt><dd>2027</dd></div>
+                <div><dt>GPAX</dt><dd>3.07</dd></div>
+              </dl>
+            </div>
+            <span className="hero__idcard-holo" aria-hidden="true" />
+          </article>
 
           <Sticker shape="sparkle" color="gold" size={58} style={{ top: '4%', left: '-2%' }} />
-          <Sticker shape="heart" color="pink" size={46} style={{ bottom: '8%', left: '4%' }} />
-          <Sticker shape="gem" color="chrome" size={44} style={{ bottom: '34%', right: '-4%' }} />
+          <Sticker shape="heart" color="pink" size={46} style={{ bottom: '4%', left: '2%' }} />
+          <Sticker shape="gem" color="chrome" size={40} style={{ top: '84%', right: '8%' }} />
           <Sticker shape="star" color="blue" size={34} style={{ top: '-4%', left: '38%' }} />
         </div>
       </div>
