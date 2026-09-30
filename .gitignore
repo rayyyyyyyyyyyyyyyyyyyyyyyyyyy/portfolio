@@ -34,3 +34,13 @@ yarn-error.log*
 # dev tooling, not part of the portfolio source
 .claude/
 skills-lock.json
+
+# design tooling (impeccable, playwright-cli), not portfolio source
+PRODUCT.md
+DESIGN.md
+.impeccable/
+.playwright-cli/
+*.webp.json
+
+# original headshot; the site ships src/assets/onuma-portrait.webp
+src/assets/img_avatar.png

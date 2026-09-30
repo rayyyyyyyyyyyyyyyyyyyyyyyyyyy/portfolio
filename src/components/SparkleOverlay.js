@@ -1,89 +1,31 @@
-import React from 'react';
 import './SparkleOverlay.css';
 
 /*
-  SparkleOverlay — Y2K Bling Sparkle Particles ✨
-  ดาวกะพริบ + Lens Flare + Decorative Stars ลอยทั่วหน้าจอ
+  Y2K glints: a few four-point sparkles twinkling behind the content.
+  Sits under the page (z-index below main) so it never covers text.
 */
+const GLINTS = [
+  { top: '9%', left: '6%', size: 22, delay: '0s', dur: '3.6s' },
+  { top: '18%', left: '88%', size: 16, delay: '1.2s', dur: '4.2s' },
+  { top: '34%', left: '96%', size: 26, delay: '2.1s', dur: '5s' },
+  { top: '47%', left: '2%', size: 18, delay: '0.7s', dur: '4.4s' },
+  { top: '63%', left: '92%', size: 14, delay: '2.8s', dur: '3.8s' },
+  { top: '76%', left: '4%', size: 24, delay: '1.6s', dur: '4.8s' },
+  { top: '88%', left: '84%', size: 18, delay: '0.4s', dur: '4s' },
+];
 
 function SparkleOverlay() {
-  // สุ่มตำแหน่งดาว
-  const sparkles = [
-    { top: '8%',  left: '12%', size: 'lg', color: 'gold', duration: '3s', delay: '0s' },
-    { top: '15%', left: '78%', size: 'md', color: 'pink', duration: '4s', delay: '1.2s' },
-    { top: '25%', left: '5%',  size: 'sm', color: 'white', duration: '3.5s', delay: '0.5s' },
-    { top: '35%', left: '92%', size: 'lg', color: 'gold', duration: '5s', delay: '2s' },
-    { top: '45%', left: '20%', size: 'md', color: 'pink', duration: '3s', delay: '1.8s' },
-    { top: '55%', left: '65%', size: 'sm', color: 'gold', duration: '4.5s', delay: '0.8s' },
-    { top: '60%', left: '88%', size: 'lg', color: 'white', duration: '3.8s', delay: '2.5s' },
-    { top: '70%', left: '35%', size: 'md', color: 'gold', duration: '4s', delay: '1s' },
-    { top: '78%', left: '55%', size: 'sm', color: 'pink', duration: '3.2s', delay: '3s' },
-    { top: '85%', left: '10%', size: 'lg', color: 'gold', duration: '5s', delay: '0.3s' },
-    { top: '12%', left: '45%', size: 'sm', color: 'white', duration: '4.2s', delay: '2.2s' },
-    { top: '40%', left: '50%', size: 'md', color: 'gold', duration: '3.6s', delay: '1.5s' },
-    { top: '90%', left: '75%', size: 'sm', color: 'pink', duration: '4s', delay: '0.7s' },
-    { top: '5%',  left: '60%', size: 'md', color: 'gold', duration: '3.4s', delay: '2.8s' },
-    { top: '50%', left: '3%',  size: 'lg', color: 'white', duration: '5s', delay: '1.3s' },
-  ];
-
-  const flares = [
-    { top: '10%', left: '30%', duration: '6s', delay: '1s' },
-    { top: '65%', left: '85%', duration: '8s', delay: '3s' },
-    { top: '30%', left: '70%', duration: '7s', delay: '5s' },
-  ];
-
-  const stars = [
-    { top: '18%', left: '95%', size: '28px', delay: '0s', char: '✦' },
-    { top: '42%', left: '2%',  size: '22px', delay: '1.5s', char: '★' },
-    { top: '72%', left: '96%', size: '20px', delay: '2.5s', char: '✧' },
-    { top: '88%', left: '40%', size: '18px', delay: '0.8s', char: '✦' },
-    { top: '5%',  left: '85%', size: '24px', delay: '3s', char: '★' },
-  ];
-
   return (
-    <div className="sparkle-overlay">
-      {/* Twinkle Sparkles */}
-      {sparkles.map((s, i) => (
-        <div
-          key={`sparkle-${i}`}
-          className={`sparkle sparkle--${s.size} sparkle--${s.color}`}
-          style={{
-            top: s.top,
-            left: s.left,
-            '--duration': s.duration,
-            '--delay': s.delay,
-          }}
-        />
-      ))}
-
-      {/* Lens Flares */}
-      {flares.map((f, i) => (
-        <div
-          key={`flare-${i}`}
-          className="lens-flare"
-          style={{
-            top: f.top,
-            left: f.left,
-            '--duration': f.duration,
-            '--delay': f.delay,
-          }}
-        />
-      ))}
-
-      {/* Decorative Stars */}
-      {stars.map((s, i) => (
-        <span
-          key={`star-${i}`}
-          className="deco-star"
-          style={{
-            top: s.top,
-            left: s.left,
-            '--size': s.size,
-            '--delay': s.delay,
-          }}
+    <div className="glints" aria-hidden="true">
+      {GLINTS.map((g, i) => (
+        <svg
+          key={i}
+          className="glint"
+          viewBox="0 0 100 100"
+          style={{ top: g.top, left: g.left, width: g.size, height: g.size, animationDelay: g.delay, animationDuration: g.dur }}
         >
-          {s.char}
-        </span>
+          <path d="M50 0 C53 38 62 47 100 50 C62 53 53 62 50 100 C47 62 38 53 0 50 C38 47 47 38 50 0Z" />
+        </svg>
       ))}
     </div>
   );

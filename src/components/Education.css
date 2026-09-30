@@ -1,151 +1,132 @@
-/* ============================================
-   Education Section — Scrapbook Style
-   ============================================ */
-
-.education {
+/* a single ID card, centered */
+.edu {
   position: relative;
-  z-index: 10;
-}
-
-.education__container {
-  max-width: 860px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.edu-card {
-  padding: 36px;
-  background: #ffffff;
-  border-radius: var(--radius-scrapbook);
-  box-shadow: var(--shadow-scrapbook);
-  border: 2px solid rgba(255, 255, 255, 0.9);
+/* ---- Laminated student ID ---- */
+.idcard {
   position: relative;
-}
-
-.edu-card__header {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-  margin-bottom: 24px;
-  padding-bottom: 20px;
-  border-bottom: 1px dashed #cbd5e1;
-}
-
-.edu-card__icon-wrapper {
-  width: 68px;
-  height: 68px;
+  overflow: hidden;
   border-radius: 16px;
-  background: #f5f3ff;
-  border: 2px solid #ddd6fe;
+  background: #fff;
+  box-shadow: var(--shadow-3);
+  transform: rotate(-2deg);
+}
+
+/* lamination sheen */
+.idcard::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(255, 255, 255, 0.55) 42%, transparent 54%);
+  pointer-events: none;
+}
+
+.idcard__band {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
-}
-
-.edu-icon {
-  color: #7c3aed;
-}
-
-.edu-card__title-group {
-  flex: 1;
-}
-
-.edu-badge {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: #7c3aed;
-  background: #ede9fe;
-  padding: 3px 10px;
-  border-radius: 9999px;
-  margin-bottom: 6px;
-}
-
-.edu-card__degree {
-  font-family: var(--font-heading);
-  font-size: 1.85rem;
-  font-weight: 800;
-  color: #0f172a;
-  line-height: 1.2;
-}
-
-.edu-card__major {
-  font-size: 1.15rem;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 14px 22px;
+  background: linear-gradient(180deg, #3d95ff, var(--luna) 60%, var(--luna-deep));
+  color: #fff;
+  font-family: var(--font-chrome);
   font-weight: 700;
-  color: #0284c7;
-  margin-bottom: 2px;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
 }
 
-.edu-card__inst {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #475569;
-  margin-bottom: 10px;
+.idcard__band-sub { font-size: 0.85rem; letter-spacing: 0.1em; opacity: 0.9; }
+
+.idcard__body {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 18px;
+  padding: 20px 22px 12px;
 }
 
-.edu-card__meta {
+.idcard__photo {
+  width: 96px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px #c9d6e8, var(--shadow-1);
+}
+
+.idcard__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.idcard__major {
+  margin-top: 6px;
+  font-weight: 800;
+  color: var(--luna-deep);
+  line-height: 1.35;
+}
+
+.idcard__degree,
+.idcard__inst {
+  font-size: 0.9rem;
+  color: var(--ink-2);
+  line-height: 1.4;
+  margin-top: 4px;
+}
+
+.idcard__meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+
+.idcard__foot {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 22px 16px;
 }
 
-/* Body Blocks */
-.edu-card__body {
+.idcard__facts {
   display: flex;
-  flex-direction: column;
   gap: 22px;
 }
 
-.edu-block {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.idcard__facts dt {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
 }
 
-.block-title {
-  font-size: 0.95rem;
+.idcard__facts dd {
+  font-family: var(--font-chrome);
+  font-size: 1.05rem;
   font-weight: 700;
-  color: #334155;
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  color: var(--pink-deep);
 }
 
-.edu-highlights {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.idcard__holo {
+  width: 44px;
+  height: 30px;
+  border-radius: 6px;
+  background: conic-gradient(from 90deg, #ffb3de, #fff6a8, #b6f2d6, #9fd0ff, #d9c1ff, #ffb3de);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
 }
 
-.edu-highlights li {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  font-size: 0.95rem;
-  color: #1e293b;
-  line-height: 1.6;
+@media (max-width: 820px) {
+  .idcard { transform: none; }
 }
 
-.course-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-/* Responsive */
-@media (max-width: 650px) {
-  .edu-card {
-    padding: 24px 18px;
-  }
-
-  .edu-card__header {
-    flex-direction: column;
-  }
-
-  .edu-card__degree {
-    font-size: 1.5rem;
-  }
+@media (max-width: 420px) {
+  .idcard__body { grid-template-columns: 1fr; }
+  .idcard__photo { width: 84px; height: 112px; }
 }

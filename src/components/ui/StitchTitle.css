@@ -1,0 +1,60 @@
+/* Aida-cloth patch sewn onto the page */
+.stitch-title {
+  --thread: var(--pink);
+  --thread-shade: var(--pink-deep);
+  display: inline-block;
+  position: relative;
+  padding: 16px 20px;
+  margin: 0 0 36px;
+  background-color: #fbfaf4;
+  /* aida weave: the holes a cross-stitch needle goes through */
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(120, 110, 80, 0.16) 1px, transparent 1.6px);
+  background-size: 5px 5px;
+  border-radius: 6px;
+  box-shadow: var(--shadow-2);
+  transform: rotate(-1.2deg);
+  line-height: 0;
+}
+
+/* running-stitch hem */
+.stitch-title::after {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 2px dashed var(--thread);
+  border-radius: 3px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.stitch-title--blue {
+  --thread: var(--luna);
+  --thread-shade: var(--luna-edge);
+}
+
+.stitch-title--green {
+  --thread: var(--grass);
+  --thread-shade: var(--grass-deep);
+}
+
+.stitch-title__art {
+  display: block;
+  width: calc(var(--cols) * 7px + 6px);
+  max-width: 100%;
+  height: auto;
+}
+
+.stitch-under,
+.stitch-over {
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
+
+.stitch-under { stroke: var(--thread-shade); }
+.stitch-over { stroke: var(--thread); }
+
+@media (max-width: 600px) {
+  .stitch-title { padding: 12px 14px; margin-bottom: 28px; }
+  .stitch-title__art { width: calc(var(--cols) * 5px + 4px); }
+}
